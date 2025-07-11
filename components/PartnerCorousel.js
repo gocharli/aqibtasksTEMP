@@ -75,10 +75,10 @@ export default function PartnerCarousel() {
         ))}
       </Swiper>
 
-      <button className="absolute left-8 top-1/2 -translate-y-1/2 text-white text-4xl z-10 partner-prev hover:text-gray-200 transition-colors">
+      <button className=" md:block hidden absolute left-8 top-1/2 -translate-y-1/2 text-white text-4xl z-10 partner-prev hover:text-gray-200 transition-colors">
         ←
       </button>
-      <button className="absolute right-8 top-1/2 -translate-y-1/2 text-white text-4xl z-10 partner-next hover:text-gray-200 transition-colors">
+      <button className="md:block hidden absolute right-8 top-1/2 -translate-y-1/2 text-white text-4xl z-10 partner-next hover:text-gray-200 transition-colors">
         →
       </button>
     </div>
