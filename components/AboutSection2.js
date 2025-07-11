@@ -3,14 +3,14 @@ import React from "react";
 
 const AboutUsSection2 = () => {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
+    <section className="pt-1 pb-4 md:pb-16 px-6 md:px-12 lg:px-24 bg-white">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           {/* Content Column */}
 
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 md:mb-0 mb-1">
             <h3 className="text-3xl font-bold text-gray-800 mb-6 rounded-md">
-              History of <span className="text-orange-500">JustStay</span>
+              Loreum Ipsm <span className="text-orange-500">Lorem</span>
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4 font-bold rounded-md">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -28,13 +28,13 @@ const AboutUsSection2 = () => {
 
           {/* Image Column */}
 
-          <div className="md:w-1/2 mb-8 md:mb-0">
+          <div className="md:w-1/2 mb-8 md:mb-0 border border-amber-100 border-rounded">
             <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
               alt="Luxurious Hotel Interior"
               width={1200} // REQUIRED!
               height={800} // REQUIRED!
-              className="w-full h-auto rounded-xl shadow-lg object-cover"
+              className="p-4 w-full h-auto rounded-xl shadow-lg object-cover"
             />
           </div>
         </div>
