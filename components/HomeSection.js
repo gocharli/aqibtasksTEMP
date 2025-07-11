@@ -1,24 +1,55 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 export default function HomeSection() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+
   return (
-    <div className="min-h-screen bg-gray-100 font-inter">
+    <div className="min-h-screen bg-gray-100 font-inter overflow-x-hidden">
+ 
+
       {/* Hero Section */}
       <div
-        className="relative h-screen bg-cover bg-center"
+        className="relative h-[60vh] md:h-screen bg-cover bg-center" 
         style={{
           backgroundImage:
             'url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
         }}
       >
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-
         {/* Navigation Bar */}
-        <nav className="relative z-10 p-6 flex justify-between items-center">
+        <nav className="relative z-20 p-6 flex justify-between items-center">
+          {" "}
+          {/* Increased z-index for nav */}
           <div className="text-white text-2xl font-bold rounded-md">
             JustStay
           </div>
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white focus:outline-none"
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={
+                    isMenuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
+                ></path>
+              </svg>
+            </button>
+          </div>
+          {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
             <a
               href="#"
@@ -51,13 +82,84 @@ export default function HomeSection() {
               Contact
             </a>
           </div>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md shadow-lg transition duration-300">
+          <button className="hidden md:block bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md shadow-lg transition duration-300">
             Logout
           </button>
         </nav>
 
+        {/* Mobile Menu Slide-in */}
+        <div
+          className={`fixed top-0 right-0 h-full w-64 bg-blue-900 bg-opacity-95 transform transition-transform duration-300 ease-in-out z-30
+            ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full"
+            } md:hidden flex flex-col items-center justify-center space-y-8 p-6`}
+        >
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-6 right-6 text-white focus:outline-none"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+          <a
+            href="#"
+            className="text-white text-2xl hover:text-orange-400 transition duration-300 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            className="text-white text-2xl hover:text-orange-400 transition duration-300 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About
+          </a>
+          <a
+            href="#"
+            className="text-white text-2xl hover:text-orange-400 transition duration-300 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Rooms
+          </a>
+          <a
+            href="#"
+            className="text-white text-2xl hover:text-orange-400 transition duration-300 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Services
+          </a>
+          <a
+            href="#"
+            className="text-white text-2xl hover:text-orange-400 transition duration-300 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </a>
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-md shadow-lg transition duration-300"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Logout
+          </button>
+        </div>
+
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-start justify-center h-full text-white p-6 md:p-12 lg:p-24">
+        <div className="relative z-10 flex flex-col items-start justify-center h-full text-white px-6 md:px-12 lg:px-24 py-6 md:py-12 lg:py-24 text-left">
+          {" "}
+          {/* Adjusted padding for better horizontal spacing */}
           <p className="text-lg mb-2 rounded-md">Welcome To</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 rounded-md">
             Hotel JustStay <br /> Ahmedabad India
@@ -67,17 +169,18 @@ export default function HomeSection() {
             maxime praesentium why did the scarecrow win an award? because he
             was outstanding in his field. Lorem ipsum
           </p>
-          <div className="flex space-x-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-md shadow-lg transition duration-300">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+            {/* Primary button with orange background */}
+            <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-md shadow-lg transition duration-300 w-full sm:w-auto">
               Book Now
             </button>
-            <button className="bg-transparent border border-white hover:bg-white hover:text-orange-500 text-white py-3 px-8 rounded-md shadow-lg transition duration-300">
+            {/* Secondary button with orange border and text, and orange hover */}
+            <button className="bg-transparent border border-orange-400 text-orange-400 hover:bg-orange-500 hover:text-white py-3 px-8 rounded-md shadow-lg transition duration-300 w-full sm:w-auto">
               Explore More
             </button>
           </div>
         </div>
       </div>
-
       {/* You can add more sections below this if needed */}
     </div>
   );
