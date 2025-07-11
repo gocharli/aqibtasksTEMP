@@ -3,6 +3,7 @@ import AboutUsSection2 from "@/components/AboutSection2";
 import CallToActionSection from "@/components/CallToAction";
 import HomeSection from "@/components/HomeSection";
 import PartnerCarousel from "@/components/PartnerCorousel";
+import TeamMembers from "@/components/TeamMembers";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutUsSection />
       <AboutUsSection2 />
       <PartnerCarousel />
+      <TeamMembers />
       <CallToActionSection />
     </>
   );
