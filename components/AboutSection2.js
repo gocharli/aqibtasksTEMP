@@ -28,13 +28,13 @@ const AboutUsSection2 = () => {
 
           {/* Image Column */}
 
-          <div className="md:w-1/2 mb-8 md:mb-0 border border-amber-100 border-rounded">
+          <div className="md:w-1/2 mb-8 md:mb-0 border border-amber-50 border-rounded">
             <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
               alt="Luxurious Hotel Interior"
               width={1200} // REQUIRED!
               height={800} // REQUIRED!
-              className="p-4 w-full h-auto rounded-xl shadow-lg object-cover"
+              className="p-4 w-full h-auto rounded-4xl shadow-lg object-cover"
             />
           </div>
         </div>
