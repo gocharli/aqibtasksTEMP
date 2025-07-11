@@ -2,15 +2,13 @@
 import React, { useState } from "react";
 
 export default function HomeSection() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-100 font-inter overflow-x-hidden">
- 
-
       {/* Hero Section */}
       <div
-        className="relative h-[60vh] md:h-screen bg-cover bg-center" 
+        className="relative h-[60vh] md:h-screen bg-cover bg-center"
         style={{
           backgroundImage:
             'url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
@@ -162,7 +160,8 @@ export default function HomeSection() {
           {/* Adjusted padding for better horizontal spacing */}
           <p className="text-lg mb-2 rounded-md">Welcome To</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 rounded-md">
-            Hotel JustStay <br /> Ahmedabad India
+            Hotel <span className="text-orange-500">JustStay</span> <br />{" "}
+            Ahmedabad India
           </h1>
           <p className="text-base md:text-lg max-w-2xl mb-8 rounded-md">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quibusdam

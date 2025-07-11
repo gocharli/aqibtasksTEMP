@@ -1,6 +1,13 @@
+import AboutUsSection from "@/components/AboutSection";
+import AboutUsSection2 from "@/components/AboutSection2";
 import HomeSection from "@/components/HomeSection";
-import Image from "next/image";
 
 export default function Home() {
-  return <HomeSection />;
+  return (
+    <>
+      <HomeSection />
+      <AboutUsSection />
+      <AboutUsSection2 />
+    </>
+  );
 }
